@@ -1,0 +1,35 @@
+@import "tailwindcss";
+
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+:root {
+  --color-brand-primary: #226CF5;
+  --color-text-primary: #3B3B3B;
+  --color-text-secondary: #939393;
+  --color-bg-primary: #FFFFFF;
+  --color-bg-secondary: #f8f9fa;
+  --color-bg-hover: rgba(0, 0, 0, 0.02);
+  --color-bg-active: rgba(34, 108, 245, 0.08);
+  --color-border-subtle: #EBEBEB;
+  --color-border-secondary: #FAFBFC3D;
+}
+
+body {
+  background-color: var(--color-bg-primary);
+  color: var(--color-text-primary);
+  margin: 0;
+  padding: 0;
+  font-family: "DM Sans", sans-serif;
+}
+
+button,
+input,
+select,
+textarea {
+  font-family: inherit;
+}
