@@ -1,5 +1,5 @@
 import { Suspense, lazy } from 'react';
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route, useLocation } from 'react-router-dom';
 import { ROUTES } from './constants/routes';
 import { Loader } from './components/common/Loader';
 
@@ -24,8 +24,10 @@ const routeConfig = [
 ];
 
 export const AppRouter = () => {
+    const location = useLocation();
+
     return (
-        <Suspense fallback={<Loader />}>
+        <Suspense key={location.pathname} fallback={<Loader />}>
             <Routes>
                 {routeConfig.map((route) => (
                     <Route key={route.path} path={route.path} element={route.element} />
