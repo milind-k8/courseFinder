@@ -10,10 +10,10 @@ export function Pagination({ currentPage, totalPages, onPageChange }: Pagination
     if (totalPages <= 1) return null;
 
     return (
-        <div className="flex justify-center py-4 border-t border-gray-100">
+        <div className="flex justify-center py-4 border-t border-[var(--color-border-subtle)]">
             <div className="flex items-center gap-2">
                 <button
-                    className="w-8 h-8 flex items-center justify-center rounded-full hover:bg-gray-100 text-gray-500 disabled:opacity-50 disabled:cursor-not-allowed"
+                    className="w-8 h-8 flex items-center justify-center rounded-full hover:bg-[var(--color-bg-hover)] text-[var(--color-text-secondary)] disabled:opacity-50 disabled:cursor-not-allowed"
                     onClick={() => onPageChange(Math.max(1, currentPage - 1))}
                     disabled={currentPage === 1}
                     aria-label="Previous page"
@@ -24,8 +24,8 @@ export function Pagination({ currentPage, totalPages, onPageChange }: Pagination
                     <button
                         key={page}
                         className={`w-8 h-8 flex items-center justify-center rounded-full text-sm font-medium transition-all ${currentPage === page
-                            ? "bg-white text-[var(--color-text-primary)] shadow-[0px_2px_15px_0px_#0000001A]"
-                            : "text-[var(--color-text-secondary)] border border-gray-200 hover:bg-gray-50"
+                            ? "bg-[var(--color-bg-primary)] text-[var(--color-text-primary)] shadow-[0px_2px_15px_0px_rgba(0,0,0,0.1)]"
+                            : "text-[var(--color-text-secondary)] border border-[var(--color-border-subtle)] hover:bg-[var(--color-bg-hover)]"
                             }`}
                         onClick={() => onPageChange(page)}
                         aria-label={`Page ${page}`}
@@ -35,7 +35,7 @@ export function Pagination({ currentPage, totalPages, onPageChange }: Pagination
                     </button>
                 ))}
                 <button
-                    className="w-8 h-8 flex items-center justify-center rounded-full hover:bg-gray-100 text-blue-600 disabled:opacity-50 disabled:cursor-not-allowed"
+                    className="w-8 h-8 flex items-center justify-center rounded-full hover:bg-[var(--color-bg-hover)] text-[var(--color-brand-primary)] disabled:opacity-50 disabled:cursor-not-allowed"
                     onClick={() => onPageChange(Math.min(totalPages, currentPage + 1))}
                     disabled={currentPage === totalPages}
                     aria-label="Next page"

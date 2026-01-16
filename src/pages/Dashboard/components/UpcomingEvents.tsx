@@ -28,13 +28,13 @@ export default function UpcomingEvents() {
                 <div className="flex gap-1">
                     <button
                         onClick={handlePrev}
-                        className="w-6 h-6 flex items-center justify-center rounded-full border border-gray-200 hover:bg-gray-50"
+                        className="w-6 h-6 flex items-center justify-center rounded-full border border-[var(--color-border-subtle)] hover:bg-[var(--color-bg-hover)]"
                     >
                         <ChevronIcon aria-label="Previous" />
                     </button>
                     <button
                         onClick={handleNext}
-                        className="w-6 h-6 flex items-center justify-center rounded-full border border-gray-200 hover:bg-gray-50"
+                        className="w-6 h-6 flex items-center justify-center rounded-full border border-[var(--color-border-subtle)] hover:bg-[var(--color-bg-hover)]"
                     >
                         <ChevronIcon className="rotate-180" aria-label="Next" />
                     </button>
@@ -55,17 +55,17 @@ export default function UpcomingEvents() {
                         <h4 className="font-[500] text-[16px] text-[var(--color-text-primary)]">{eventData.title}</h4>
                         <p className="font-[500] text-[13px] mb-1">{eventData.date}</p>
                     </div>
-                    <div className="bg-gray-100 rounded px-1 py-2 text-center min-w-[50px]">
+                    <div className="bg-[var(--color-bg-secondary)] rounded px-1 py-2 text-center min-w-[50px]">
                         <div className="text-[13px] font-[500] text-[var(--color-text-primary)]">{timeTime}</div>
                         <div className="text-[12px] font-[400] text-[var(--color-text-secondary)] uppercase">{timePeriod}</div>
                     </div>
                 </div>
 
-                <div className="flex items-center gap-2 text-xs text-gray-600 mb-3">
+                <div className="flex items-center gap-2 text-xs text-[var(--color-text-secondary)] mb-3">
                     <BuidingIcon aria-hidden="true" />
                     {eventData.university}
                 </div>
-                <div className="flex items-center gap-2 text-xs text-gray-600 mb-4">
+                <div className="flex items-center gap-2 text-xs text-[var(--color-text-secondary)] mb-4">
                     <UserIcon aria-hidden="true" />
                     By {eventData.presenter}
                 </div>

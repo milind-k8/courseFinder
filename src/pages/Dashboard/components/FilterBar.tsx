@@ -30,33 +30,33 @@ const countryOptions = [
 
 export default function FilterBar() {
     return (
-        <Card className="mb-8">
-            <div className="grid grid-cols-3 gap-4">
+        <Card className="mb-6 lg:mb-8">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 lg:gap-4">
                 <Select
                     options={yearOptions}
                     placeholder="Year"
-                    className="min-w-[140px]"
+                    className="w-full"
                     icon={<CalendarIcon />}
                 />
                 <Select
                     options={dateCreatedOptions}
                     placeholder="Date Created"
-                    className="min-w-[160px]"
+                    className="w-full"
                     icon={<CalendarIcon />}
                 />
                 <Select
                     options={intakeOptions}
                     placeholder="Select intake"
-                    className="min-w-[160px]"
+                    className="w-full"
                     icon={<CalendarIcon />}
                 />
                 <Select
                     options={countryOptions}
                     placeholder="Countries"
-                    className="min-w-[160px]"
+                    className="w-full"
                     icon={<CountryIcon />}
                 />
-                <Button variant="outline" className="text-blue-600 border-blue-600 hover:bg-blue-50">
+                <Button variant="outline" className="text-blue-600 border-blue-600 hover:bg-blue-50 w-full sm:col-span-2 lg:col-span-1">
                     Apply Filters
                 </Button>
             </div>

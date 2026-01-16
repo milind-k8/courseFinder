@@ -19,7 +19,6 @@ export default function ApplicationsTable() {
     const filteredAndSortedData = useMemo(() => {
         let data = [...applicationsData];
 
-        // Sorting
         if (sortConfig.key) {
             data.sort((a, b) => {
                 const aValue = a[sortConfig.key!] ?? "";
@@ -45,7 +44,7 @@ export default function ApplicationsTable() {
             key: "ackNo",
             label: "Ack. no.",
             sortable: true,
-            className: "text-sm text-gray-500 underline decoration-gray-400"
+            className: "text-sm text-[var(--color-text-secondary)] underline decoration-[var(--color-border-light)]"
         },
         {
             key: "studentName",
@@ -53,8 +52,8 @@ export default function ApplicationsTable() {
             sortable: true,
             render: (app) => (
                 <>
-                    <div className="text-sm font-medium text-gray-900">{app.studentName}</div>
-                    <div className="text-sm text-gray-500">{app.email}</div>
+                    <div className="text-sm font-medium text-[var(--color-text-primary)]">{app.studentName}</div>
+                    <div className="text-sm text-[var(--color-text-secondary)]">{app.email}</div>
                 </>
             )
         },
@@ -62,13 +61,13 @@ export default function ApplicationsTable() {
             key: "university",
             label: "University",
             sortable: true,
-            className: "text-sm text-gray-900"
+            className: "text-sm text-[var(--color-text-primary)]"
         },
         {
             key: "program",
             label: "Program",
             sortable: true,
-            className: "text-sm text-gray-900"
+            className: "text-sm text-[var(--color-text-primary)]"
         },
         {
             key: "pendingSince",
@@ -76,8 +75,8 @@ export default function ApplicationsTable() {
             sortable: true,
             render: (app) => (
                 <>
-                    <div className="text-sm font-medium text-gray-900">{app.pendingSince}</div>
-                    <div className="text-xs text-gray-500">{app.date}</div>
+                    <div className="text-sm font-medium text-[var(--color-text-primary)]">{app.pendingSince}</div>
+                    <div className="text-xs text-[var(--color-text-secondary)]">{app.date}</div>
                 </>
             )
         }
@@ -87,20 +86,20 @@ export default function ApplicationsTable() {
         <Card className="flex-1" padding="p-0">
             <div className="p-6 pb-2">
                 <div className="flex justify-between items-center mb-6">
-                    <h3 className="text-xl font-bold text-gray-800">Applications</h3>
-                    <button className="text-gray-400 hover:text-gray-600" aria-label="Expand table">
+                    <h3 className="text-xl font-bold text-[var(--color-text-primary)]">Applications</h3>
+                    <button className="text-[var(--color-icon-muted)] hover:text-[var(--color-text-muted)]" aria-label="Expand table">
                         <ExpandIcon aria-hidden="true" />
                     </button>
                 </div>
 
-                <div className="flex gap-2 border-b border-gray-100 mb-6">
-                    <button className="px-4 py-2 text-blue-600 font-semibold bg-blue-50 rounded-md">
+                <div className="flex gap-2 mb-6">
+                    <button className="px-4 py-2 text-[var(--color-brand-primary)] font-semibold bg-[var(--color-bg-active)] rounded-md">
                         Pending On Me (15)
                     </button>
-                    <button className="px-4 py-2 text-gray-500 font-medium hover:bg-gray-50 hover:text-gray-800 rounded-md">
+                    <button className="px-4 py-2 text-[var(--color-text-secondary)] font-medium hover:bg-[var(--color-bg-hover)] hover:text-[var(--color-text-primary)] rounded-md">
                         Lorem Ipsum (12)
                     </button>
-                    <button className="px-4 py-2 text-gray-500 font-medium hover:bg-gray-50 hover:text-gray-800 rounded-md">
+                    <button className="px-4 py-2 text-[var(--color-text-secondary)] font-medium hover:bg-[var(--color-bg-hover)] hover:text-[var(--color-text-primary)] rounded-md">
                         Lorem Ipsum (18)
                     </button>
                 </div>

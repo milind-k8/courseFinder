@@ -18,7 +18,7 @@ export default function ManagerContact() {
                             <div>
                                 <h4 className="text-[var(--color-brand-primary)] font-[500] text-[16px]">{manager.name}</h4>
                                 <p className="text-[13px] text-[var(--color-text-primary)] font-[500] mt-0.5">
-                                    {manager.phone} <span className="text-gray-300 mx-2">|</span> {manager.location}
+                                    {manager.phone} <span className="text-[var(--color-border-light)] mx-2">|</span> {manager.location}
                                 </p>
                             </div>
                         </div>

@@ -8,8 +8,8 @@ const AlliedServicesBanner = () => {
         <div
             className="w-full rounded-[16px] p-8 md:p-12 flex flex-col md:flex-row items-center justify-between relative overflow-hidden mt-8"
             style={{
-                background: 'linear-gradient(267.79deg, #00163E 9.08%, #1347A6 88.55%, #226CF5 114.71%)',
-                boxShadow: '0px 1px 15px 0px #00000008'
+                background: 'var(--color-brand-gradient)',
+                boxShadow: '0px 1px 15px 0px var(--color-shadow-dropdown)'
             }}
         >
             {/* Left Content */}

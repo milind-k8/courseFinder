@@ -20,11 +20,11 @@ export function Table<T>({ data, columns, sortConfig, onSort, keyExtractor }: Ta
             );
         }
         return sortConfig.direction === 'asc' ? (
-            <svg className="w-3 h-3 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <svg className="w-3 h-3 text-[var(--color-brand-primary)]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 15l7-7 7 7" />
             </svg>
         ) : (
-            <svg className="w-3 h-3 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <svg className="w-3 h-3 text-[var(--color-brand-primary)]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
             </svg>
         );
@@ -33,13 +33,13 @@ export function Table<T>({ data, columns, sortConfig, onSort, keyExtractor }: Ta
     return (
         <div className="overflow-x-auto">
             <table className="w-full">
-                <thead className="bg-gray-50 border-y border-gray-100">
+                <thead className="bg-[var(--color-bg-secondary)] border-y border-[var(--color-border-subtle)]">
                     <tr>
                         {columns.map((col) => (
-                            <th key={String(col.key)} className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                            <th key={String(col.key)} className="px-6 py-3 text-left text-xs font-medium text-[var(--color-text-secondary)] uppercase tracking-wider">
                                 {col.sortable && onSort ? (
                                     <button
-                                        className="flex items-center gap-1 cursor-pointer hover:text-gray-700 bg-transparent border-none p-0 font-medium text-xs text-gray-500 uppercase tracking-wider"
+                                        className="flex items-center gap-1 cursor-pointer hover:text-[var(--color-text-primary)] bg-transparent border-none p-0 font-medium text-xs text-[var(--color-text-secondary)] uppercase tracking-wider"
                                         onClick={() => onSort(col.key)}
                                         aria-sort={sortConfig?.key === col.key ? (sortConfig.direction === 'asc' ? 'ascending' : 'descending') : undefined}
                                     >
@@ -53,9 +53,9 @@ export function Table<T>({ data, columns, sortConfig, onSort, keyExtractor }: Ta
                         ))}
                     </tr>
                 </thead>
-                <tbody className="divide-y divide-gray-50">
+                <tbody className="divide-y divide-[var(--color-border-subtle)]">
                     {data.map((item) => (
-                        <tr key={keyExtractor(item)} className="hover:bg-gray-50">
+                        <tr key={keyExtractor(item)} className="hover:bg-[var(--color-bg-hover)]">
                             {columns.map((col) => (
                                 <td key={String(col.key)} className={`px-6 py-4 whitespace-nowrap ${col.className || ''}`}>
                                     {col.render ? col.render(item) : (item[col.key] as ReactNode)}

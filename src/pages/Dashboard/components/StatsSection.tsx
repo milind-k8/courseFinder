@@ -2,7 +2,7 @@ import { statsData } from "../../../data/dashboardData";
 
 export default function StatsSection() {
     return (
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-4 mb-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 mb-8 lg:mb-10">
             {statsData.map((stat) => (
                 <div
                     key={stat.id}

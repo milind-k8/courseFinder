@@ -11,11 +11,11 @@ import AlliedServicesBanner from "./components/AlliedServicesBanner";
 export default function Dashboard() {
 
     const NameSection = () => {
-        return <div className="flex items-center justify-between mb-10">
-            <h3 className="text-[24px] font-normal">Hey, Good Morning <span className="font-bold">John!</span></h3>
-            <div className="flex gap-4">
-                <Button variant="outline" onClick={() => window.location.reload()}>Refresh Dashboard</Button>
-                <Button>Register Student</Button>
+        return <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between mb-6 lg:mb-10 gap-4">
+            <h3 className="text-[20px] lg:text-[24px] font-normal">Hey, Good Morning <span className="font-bold">John!</span></h3>
+            <div className="flex gap-2 sm:gap-4 w-full sm:w-auto">
+                <Button variant="outline" onClick={() => window.location.reload()} className="flex-1 sm:flex-none text-sm lg:text-base">Refresh Dashboard</Button>
+                <Button className="flex-1 sm:flex-none text-sm lg:text-base">Register Student</Button>
             </div>
         </div>
 
@@ -24,22 +24,33 @@ export default function Dashboard() {
         <div className="max-w-[1600px] mx-auto">
             <NameSection />
 
-            <div className="flex flex-col lg:flex-row gap-8">
-                {/* Main Content Area */}
-                <div className="flex-1 min-w-0">
+            <div className="flex flex-col lg:flex-row gap-6 lg:gap-8">
+                <div className="flex-1 min-w-0 order-2 lg:order-1">
                     <FilterBar />
                     <StatsSection />
                     <ApplicationsTable />
                     <AlliedServicesBanner />
                 </div>
 
-                {/* Right Sidebar Area */}
-                <div className="w-full lg:w-[350px] shrink-0">
-                    <NewsBulletin />
-                    <UpcomingEvents />
-                    <QuickLinks />
-                    <ManagerContact />
+                <div className="w-full lg:w-[350px] shrink-0 order-1 lg:order-2">
+                    <div className="block lg:hidden">
+                        <NewsBulletin />
+                    </div>
+
+                    <div className="hidden lg:block">
+                        <NewsBulletin />
+                        <UpcomingEvents />
+                        <QuickLinks />
+                        <ManagerContact />
+                    </div>
+
                 </div>
+            </div>
+
+            <div className="lg:hidden mt-6 space-y-6">
+                <UpcomingEvents />
+                <QuickLinks />
+                <ManagerContact />
             </div>
         </div>
     );

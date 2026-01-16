@@ -17,14 +17,14 @@ const Select: React.FC<SelectProps> = ({ icon, className = '', ...props }) => {
             ...base,
             minHeight: '44px',
             borderRadius: '8px',
-            borderColor: state.isFocused ? 'var(--color-brand-primary)' : '#E5E7EB',
-            boxShadow: state.isFocused ? '0 0 0 2px rgba(59, 130, 246, 0.1)' : 'none',
+            borderColor: state.isFocused ? 'var(--color-brand-primary)' : 'var(--color-border-subtle)',
+            boxShadow: state.isFocused ? '0 0 0 2px var(--color-brand-primary-focus)' : 'none',
             paddingLeft: icon ? '12px' : '16px',
             paddingRight: '16px',
-            backgroundColor: '#FFFFFF',
+            backgroundColor: 'var(--color-bg-primary)',
             cursor: 'pointer',
             '&:hover': {
-                borderColor: state.isFocused ? 'var(--color-brand-primary)' : '#D1D5DB',
+                borderColor: state.isFocused ? 'var(--color-brand-primary)' : 'var(--color-border-light)',
             },
         }),
         valueContainer: (base) => ({
@@ -34,25 +34,25 @@ const Select: React.FC<SelectProps> = ({ icon, className = '', ...props }) => {
         }),
         placeholder: (base) => ({
             ...base,
-            color: '#9CA3AF',
+            color: 'var(--color-text-placeholder)',
             fontSize: '14px',
             fontWeight: '400',
         }),
         singleValue: (base) => ({
             ...base,
-            color: '#374151',
+            color: 'var(--color-text-primary)',
             fontSize: '14px',
         }),
         input: (base) => ({
             ...base,
-            color: '#374151',
+            color: 'var(--color-text-primary)',
             fontSize: '14px',
         }),
         menu: (base) => ({
             ...base,
             borderRadius: '8px',
-            boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)',
-            border: '1px solid #E5E7EB',
+            boxShadow: '0 4px 6px -1px var(--color-shadow-dropdown), 0 2px 4px -1px var(--color-shadow-dropdown)',
+            border: '1px solid var(--color-border-subtle)',
             marginTop: '4px',
         }),
         menuList: (base) => ({
@@ -64,15 +64,15 @@ const Select: React.FC<SelectProps> = ({ icon, className = '', ...props }) => {
             backgroundColor: state.isSelected
                 ? 'var(--color-brand-primary)'
                 : state.isFocused
-                    ? '#F3F4F6'
+                    ? 'var(--color-bg-option-hover)'
                     : 'transparent',
-            color: state.isSelected ? '#FFFFFF' : '#374151',
+            color: state.isSelected ? 'var(--color-bg-primary)' : 'var(--color-text-primary)',
             cursor: 'pointer',
             borderRadius: '4px',
             fontSize: '14px',
             padding: '8px 12px',
             '&:active': {
-                backgroundColor: state.isSelected ? 'var(--color-brand-primary)' : '#E5E7EB',
+                backgroundColor: state.isSelected ? 'var(--color-brand-primary)' : 'var(--color-border-subtle)',
             },
         }),
         indicatorSeparator: () => ({
@@ -80,12 +80,12 @@ const Select: React.FC<SelectProps> = ({ icon, className = '', ...props }) => {
         }),
         dropdownIndicator: (base, state) => ({
             ...base,
-            color: '#9CA3AF',
+            color: 'var(--color-icon-muted)',
             padding: '8px',
             transition: 'transform 0.2s',
             transform: state.selectProps.menuIsOpen ? 'rotate(180deg)' : 'rotate(0deg)',
             '&:hover': {
-                color: '#6B7280',
+                color: 'var(--color-text-muted)',
             },
         }),
     };

@@ -8,15 +8,71 @@
 }
 
 :root {
+  /* Brand Colors */
   --color-brand-primary: #226CF5;
+  --color-brand-primary-dark: #1854C1;
+  --color-brand-primary-light: #71C2FF;
+  --color-brand-primary-50: #226CF599;
+  --color-brand-primary-focus: #9CBDFB;
+  --color-brand-gradient: linear-gradient(267.79deg, #00163E 9.08%, #1347A6 88.55%, #226CF5 114.71%);
+
+  /* Text Colors */
   --color-text-primary: #3B3B3B;
   --color-text-secondary: #939393;
+  --color-text-muted: #8F9297;
+  --color-text-dark: #0E1B2C;
+  --color-text-placeholder: #616262;
+  --color-text-inverse: #FFFFFF;
+
+  /* Background Colors */
   --color-bg-primary: #FFFFFF;
-  --color-bg-secondary: #f8f9fa;
-  --color-bg-hover: rgba(0, 0, 0, 0.02);
-  --color-bg-active: rgba(34, 108, 245, 0.08);
+  --color-bg-secondary: #F7F8F9;
+  --color-bg-tertiary: #EFF2F5;
+  --color-bg-hover: #EBEEF1;
+  --color-bg-active: #E4ECFD;
+  --color-bg-option-hover: #EBF2FF;
+  --color-bg-dark: #0E1B2C;
+  --color-bg-dark-alt: #263238;
+
+  /* Border Colors */
   --color-border-subtle: #EBEBEB;
+  --color-border-light: #D8DBDD;
+  --color-border-medium: #DBDBDB;
+  --color-border-muted: #D9D9D9;
+  --color-border-dark: #D2D2D2;
   --color-border-secondary: #FAFBFC3D;
+
+  /* Status Colors - Success */
+  --color-success: #41A155;
+  --color-success-light: #EBFFEF;
+  --color-success-bg: #B3EDC0;
+
+  /* Status Colors - Warning */
+  --color-warning: #EBB925;
+  --color-warning-dark: #C09B2B;
+  --color-warning-light: #FFF6DB;
+  --color-warning-bg: #FEE598;
+
+  /* Status Colors - Error */
+  --color-error: #FF1A2F;
+  --color-error-dark: #FF2E42;
+  --color-error-light: #FFF0F2;
+  --color-error-bg: #FDCED5;
+
+  /* Status Colors - Info/Other */
+  --color-info-light: #D4E3FF;
+  --color-purple-light: #CDBFFF;
+  --color-orange-light: #FFD197;
+
+  /* Icon Colors */
+  --color-icon-muted: #939393;
+  --color-icon-disabled: #93939366;
+
+  /* Shadow Colors */
+  --color-shadow-dropdown: rgba(0, 0, 0, 0.1);
+
+  /* Misc */
+  --color-gray-light: #EEEEEE;
 }
 
 body {
