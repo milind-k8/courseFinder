@@ -1,5 +1,5 @@
 import { quickLinksData } from "../../../data/dashboardData";
-import ExternalLinkIcon from "../../../assets/external-link.svg";
+import ExternalLinkIcon from "../../../assets/external-link.svg?react";
 
 export default function QuickLinks() {
     return (
@@ -13,7 +13,7 @@ export default function QuickLinks() {
                         className="block bg-white rounded-xl p-4 shadow-sm hover:shadow-md transition-shadow flex justify-between items-center group"
                     >
                         <span className="text-[var(--color-brand-primary)] text-[16px] font-[500] underline">{link.label}</span>
-                        <img src={ExternalLinkIcon} alt="External Link" />
+                        <ExternalLinkIcon aria-label="External Link" />
                     </a>
                 ))}
             </div>

@@ -2,10 +2,10 @@ import { useState } from 'react';
 import { upcomingEvents } from "../../../data/dashboardData";
 import Card from "../../../components/common/Card";
 import Button from "../../../components/common/Button";
-import Chevron from '../../../assets/chevron-left.svg';
+import ChevronIcon from '../../../assets/chevron-left.svg?react';
 import GroupImage from '../../../assets/groupImage.jpg';
-import Buiding from '../../../assets/buiding.svg';
-import User from '../../../assets/user.svg';
+import BuidingIcon from '../../../assets/buiding.svg?react';
+import UserIcon from '../../../assets/user.svg?react';
 
 export default function UpcomingEvents() {
     const [currentIndex, setCurrentIndex] = useState(0);
@@ -30,13 +30,13 @@ export default function UpcomingEvents() {
                         onClick={handlePrev}
                         className="w-6 h-6 flex items-center justify-center rounded-full border border-gray-200 hover:bg-gray-50"
                     >
-                        <img className="" src={Chevron} alt="Previous" />
+                        <ChevronIcon aria-label="Previous" />
                     </button>
                     <button
                         onClick={handleNext}
                         className="w-6 h-6 flex items-center justify-center rounded-full border border-gray-200 hover:bg-gray-50"
                     >
-                        <img className="rotate-180" src={Chevron} alt="Next" />
+                        <ChevronIcon className="rotate-180" aria-label="Next" />
                     </button>
                 </div>
             </div>
@@ -62,11 +62,11 @@ export default function UpcomingEvents() {
                 </div>
 
                 <div className="flex items-center gap-2 text-xs text-gray-600 mb-3">
-                    <img src={Buiding} alt="" />
+                    <BuidingIcon aria-hidden="true" />
                     {eventData.university}
                 </div>
                 <div className="flex items-center gap-2 text-xs text-gray-600 mb-4">
-                    <img src={User} alt="" />
+                    <UserIcon aria-hidden="true" />
                     By {eventData.presenter}
                 </div>
                 <Button className="w-full justify-center">Register Now</Button>

@@ -1,20 +1,20 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 import { ROUTES } from '../constants/routes';
-import HomeIcon from '../assets/home.svg';
-import StudentIcon from '../assets/student.svg';
-import ApplicationIcon from '../assets/application.svg';
-import SearchIcon from '../assets/search.svg';
-import WalletIcon from '../assets/wallet.svg';
-import CommissionIcon from '../assets/commission.svg';
-import AlliedIcon from '../assets/allied.svg';
-import InfoIcon from '../assets/info.svg';
-import FeedbackIcon from '../assets/feedback.svg';
-import QuickIcon from '../assets/quick.svg';
+import HomeIcon from '../assets/home.svg?react';
+import StudentIcon from '../assets/student.svg?react';
+import ApplicationIcon from '../assets/application.svg?react';
+import SearchIcon from '../assets/search.svg?react';
+import WalletIcon from '../assets/wallet.svg?react';
+import CommissionIcon from '../assets/commission.svg?react';
+import AlliedIcon from '../assets/allied.svg?react';
+import InfoIcon from '../assets/info.svg?react';
+import FeedbackIcon from '../assets/feedback.svg?react';
+import QuickIcon from '../assets/quick.svg?react';
 
 interface SidebarItem {
     label: string;
-    icon: string;
+    icon: React.FC<React.SVGProps<SVGSVGElement>>;
     route?: string;
     hasDropdown?: boolean;
 }
@@ -75,7 +75,7 @@ export function Sidebar() {
                                         end={item.route === ROUTES.DASHBOARD}
                                     >
                                         <div className={`w-6 h-6 flex items-center justify-center ${!isCollapsed ? 'mr-3' : 'mx-auto'}`}>
-                                            <span className="block w-[24px] h-[24px]"><img src={item.icon} alt={item.label} className="max-w-full max-h-full" /></span>
+                                            <span className="block w-[24px] h-[24px]"><item.icon className="max-w-full max-h-full" aria-label={item.label} /></span>
                                         </div>
                                         {!isCollapsed && <span className="whitespace-nowrap">{item.label}</span>}
 
@@ -86,7 +86,7 @@ export function Sidebar() {
                                 ) : (
                                     <div className={`${navLinkClasses} ${inactiveClasses}`}>
                                         <div className={`w-6 h-6 flex items-center justify-center ${!isCollapsed ? 'mr-3' : 'mx-auto'}`}>
-                                            <img src={item.icon} alt={item.label} className="max-w-full max-h-full" />
+                                            <item.icon className="max-w-full max-h-full" aria-label={item.label} />
                                         </div>
                                         {!isCollapsed && <span className="whitespace-nowrap">{item.label}</span>}
 
@@ -102,7 +102,7 @@ export function Sidebar() {
                 <div className="mt-auto px-4">
                     <button className={`${navLinkClasses} text-[var(--color-text-primary)] hover:bg-[var(--color-bg-hover)]`}>
                         <div className={`w-6 h-6 flex items-center justify-center ${!isCollapsed ? 'mr-3' : 'mx-auto'}`}>
-                            <img src={FeedbackIcon} alt="Submit feedback" className="max-w-full max-h-full" />
+                            <FeedbackIcon className="max-w-full max-h-full" aria-label="Submit feedback" />
                         </div>
                         {!isCollapsed && <span className="whitespace-nowrap">Submit feedback</span>}
 

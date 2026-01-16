@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { newsData } from "../../../data/dashboardData";
 import Card from "../../../components/common/Card";
-import newsPaperIcon from "../../../assets/news-paper.svg";
+import NewsPaperIcon from "../../../assets/news-paper.svg?react";
 
 export default function NewsBulletin() {
     const [currentIndex, setCurrentIndex] = useState(0);
@@ -13,8 +13,7 @@ export default function NewsBulletin() {
             <h3 className="font-[700] text-[16px] mb-4">News Bulletin</h3>
             <div className="flex gap-4">
                 <div className="min-w-[40px] h-[40px] border-[1px] border-[var(--color-text-secondary)] rounded-full flex items-center justify-center text-blue-600">
-                    {/* Simple icon placeholder */}
-                    <img src={newsPaperIcon} alt="News Paper" />
+                    <NewsPaperIcon aria-label="News Paper" />
                 </div>
                 <div>
                     <h4 className="font-[700] text-[16px] mb-1">{currentNews.title}</h4>

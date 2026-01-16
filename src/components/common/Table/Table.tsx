@@ -1,5 +1,5 @@
 import type { ReactNode } from "react";
-import filterArrow from "../../../assets/filter-arrow.svg";
+import FilterArrowIcon from "../../../assets/filter-arrow.svg?react";
 import type { SortConfig, Column } from "./types";
 
 interface TableProps<T> {
@@ -16,7 +16,7 @@ export function Table<T>({ data, columns, sortConfig, onSort, keyExtractor }: Ta
 
         if (sortConfig.key !== column.key) {
             return (
-                <img src={filterArrow} alt="" />
+                <FilterArrowIcon aria-hidden="true" />
             );
         }
         return sortConfig.direction === 'asc' ? (

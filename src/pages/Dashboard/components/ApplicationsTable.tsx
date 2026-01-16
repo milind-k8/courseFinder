@@ -1,7 +1,7 @@
 import { useState, useMemo } from "react";
 import { applicationsData, type ApplicationData } from "../../../data/dashboardData";
 import Card from "../../../components/common/Card";
-import expand from "../../../assets/expand.svg";
+import ExpandIcon from "../../../assets/expand.svg?react";
 import { Table, Pagination, type Column, type SortConfig } from "../../../components/common/Table";
 
 export default function ApplicationsTable() {
@@ -89,7 +89,7 @@ export default function ApplicationsTable() {
                 <div className="flex justify-between items-center mb-6">
                     <h3 className="text-xl font-bold text-gray-800">Applications</h3>
                     <button className="text-gray-400 hover:text-gray-600" aria-label="Expand table">
-                        <img src={expand} alt="" aria-hidden="true" />
+                        <ExpandIcon aria-hidden="true" />
                     </button>
                 </div>
 
