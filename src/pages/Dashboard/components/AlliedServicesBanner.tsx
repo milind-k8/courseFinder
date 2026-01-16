@@ -2,6 +2,7 @@
 import Button from "../../../components/common/Button";
 // @ts-ignore
 import studentImage from "../../../assets/images/student_portrait.png";
+import LazyImage from '../../../components/common/LazyImage';
 
 const AlliedServicesBanner = () => {
     return (
@@ -32,7 +33,7 @@ const AlliedServicesBanner = () => {
             {/* Right Image */}
             <div className="relative z-10 mt-8 md:mt-0">
                 <div className="relative w-[180px] h-[180px] md:w-[180px] md:h-[180px] rounded-full overflow-hidden border-4 border-white/10 flex items-center justify-center bg-blue-500/20 backdrop-blur-sm">
-                    <img
+                    <LazyImage
                         src={studentImage}
                         alt="Student with backpack"
                         className="w-full h-full object-cover"

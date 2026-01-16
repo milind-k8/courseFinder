@@ -6,6 +6,7 @@ import ChevronIcon from '../../../assets/chevron-left.svg?react';
 import GroupImage from '../../../assets/groupImage.jpg';
 import BuidingIcon from '../../../assets/buiding.svg?react';
 import UserIcon from '../../../assets/user.svg?react';
+import LazyImage from '../../../components/common/LazyImage';
 
 export default function UpcomingEvents() {
     const [currentIndex, setCurrentIndex] = useState(0);
@@ -43,7 +44,7 @@ export default function UpcomingEvents() {
 
             <div>
                 <div className="overflow-hidden mb-3 h-[140px]">
-                    <img
+                    <LazyImage
                         src={eventData.imageUrl || GroupImage}
                         alt={eventData.title}
                         className="w-full h-full object-cover"
