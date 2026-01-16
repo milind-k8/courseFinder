@@ -56,7 +56,7 @@ export default function FilterBar() {
                     className="w-full"
                     icon={<CountryIcon />}
                 />
-                <Button variant="outline" className="text-blue-600 border-blue-600 hover:bg-blue-50 w-full sm:col-span-2 lg:col-span-1">
+                <Button variant="outline" className="text-blue-600 border-blue-600 hover:bg-blue-50 sm:col-span-2 lg:col-span-1">
                     Apply Filters
                 </Button>
             </div>
