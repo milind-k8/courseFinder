@@ -15,12 +15,14 @@ import {
     upcomingEvents as initialUpcomingEvents,
     quickLinksData as initialQuickLinksData,
     managerData as initialManagerData,
+    alliedServicesBannerData as initialBannerData,
     type StatCardData,
     type ApplicationData,
     type NewsData,
     type EventData,
     type LinkData,
     type ManagerData,
+    type BannerData,
 } from "../../data/dashboardData";
 
 export default function Dashboard() {
@@ -31,6 +33,7 @@ export default function Dashboard() {
     const [eventsData] = useState<EventData[]>(initialUpcomingEvents);
     const [quickLinksData] = useState<LinkData[]>(initialQuickLinksData);
     const [managerData] = useState<ManagerData[]>(initialManagerData);
+    const [bannerData] = useState<BannerData[]>(initialBannerData);
 
     const NameSection = () => {
         return <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between mb-6 lg:mb-10 gap-4">
@@ -52,7 +55,7 @@ export default function Dashboard() {
                     <FilterBar />
                     <StatsSection data={statsData} />
                     <ApplicationsTable data={applicationsData} />
-                    <AlliedServicesBanner />
+                    <AlliedServicesBanner data={bannerData} />
                 </div>
 
                 <div className="w-full lg:w-[350px] shrink-0 order-1 lg:order-2">

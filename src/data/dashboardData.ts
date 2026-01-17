@@ -49,6 +49,42 @@ export interface LinkData {
     url: string;
 }
 
+export interface BannerData {
+    id: string;
+    subtitle: string;
+    title: string;
+    description: string;
+    buttonLabel: string;
+    buttonLink: string;
+}
+
+export const alliedServicesBannerData: BannerData[] = [
+    {
+        id: "1",
+        subtitle: "Allied Services",
+        title: "Overseas Education Loans",
+        description: "Provide end to end overseas education loan assistance to your students to help them achieve their goal",
+        buttonLabel: "Get Started",
+        buttonLink: "#",
+    },
+    {
+        id: "2",
+        subtitle: "Allied Services",
+        title: "Visa Assistance",
+        description: "Expert guidance and support for student visa applications to ensure a smooth and hassle-free process",
+        buttonLabel: "Learn More",
+        buttonLink: "#",
+    },
+    {
+        id: "3",
+        subtitle: "Allied Services",
+        title: "Accommodation Services",
+        description: "Find the perfect student accommodation near your university with our trusted partners worldwide",
+        buttonLabel: "Explore",
+        buttonLink: "#",
+    },
+];
+
 export const statsData: StatCardData[] = [
     {
         id: "1",
