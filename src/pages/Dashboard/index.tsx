@@ -1,4 +1,5 @@
 import { useState, useMemo } from "react";
+import { useAtomValue } from "jotai";
 import Button from "../../components/common/Button";
 import FilterBar, { type FilterValues } from "./components/FilterBar";
 import StatsSection from "./components/StatsSection";
@@ -24,6 +25,8 @@ import {
     type ManagerData,
     type BannerData,
 } from "../../data/dashboardData";
+import { searchQueryAtom } from "../../store/searchAtoms";
+import { useDebounce } from "../../hooks/useDebounce";
 
 export default function Dashboard() {
     const [statsData] = useState<StatCardData[]>(initialStatsData);
@@ -41,8 +44,22 @@ export default function Dashboard() {
         country: null,
     });
 
+    const searchQuery = useAtomValue(searchQueryAtom);
+    const debouncedSearchQuery = useDebounce(searchQuery, 300);
+
     const filteredApplicationsData = useMemo(() => {
         let result = [...applicationsData];
+
+        if (debouncedSearchQuery.trim()) {
+            const query = debouncedSearchQuery.toLowerCase().trim();
+            result = result.filter(app =>
+                app.studentName.toLowerCase().includes(query) ||
+                app.email.toLowerCase().includes(query) ||
+                app.ackNo.toLowerCase().includes(query) ||
+                app.university.toLowerCase().includes(query) ||
+                app.program.toLowerCase().includes(query)
+            );
+        }
 
         if (filters.country) {
             result = result.filter(app => app.country === filters.country);
@@ -63,7 +80,7 @@ export default function Dashboard() {
         }
 
         return result;
-    }, [applicationsData, filters]);
+    }, [applicationsData, filters, debouncedSearchQuery]);
 
     const NameSection = () => {
         return <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between mb-6 lg:mb-10 gap-4">

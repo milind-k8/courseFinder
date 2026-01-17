@@ -1,4 +1,4 @@
-
+import { useAtom } from 'jotai';
 import CourseIcon from '../assets/coursefinder.svg?react'
 import Input from './common/Input';
 import SearchIcon from '../assets/searchIcon.svg?react'
@@ -6,6 +6,7 @@ import SpeakerIcon from '../assets/speaker.svg?react'
 import BellIcon from '../assets/bell.svg?react'
 import ProfileIcon from '../assets/chevron-down.svg?react'
 import headerUser from '../assets/header-user.png'
+import { searchQueryAtom } from '../store/searchAtoms';
 
 interface HeaderProps {
     onMenuClick: () => void;
@@ -68,6 +69,8 @@ const MobileSearchButton = () => (
 );
 
 export function Header({ onMenuClick }: HeaderProps) {
+    const [searchQuery, setSearchQuery] = useAtom(searchQueryAtom);
+
     return (
         <header className="h-[60px] lg:h-[76px] bg-[var(--color-brand-primary)] border-b border-[var(--color-border-subtle)] flex items-center text-[var(--color-bg-primary)]">
             <div className="flex items-center">
@@ -80,6 +83,8 @@ export function Header({ onMenuClick }: HeaderProps) {
                     <Input
                         placeholder="Search by student name, ack no."
                         icon={<SearchIcon />}
+                        value={searchQuery}
+                        onChange={(e) => setSearchQuery(e.target.value)}
                     />
                 </div>
 
