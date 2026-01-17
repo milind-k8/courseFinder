@@ -3,6 +3,7 @@ export interface StatCardData {
     count: number;
     label: string;
     color: string; // Hex or tailwind class suffix
+    borderColor: string; // CSS variable for border color
     buttonLabel: string;
 }
 
@@ -92,35 +93,40 @@ export const statsData: StatCardData[] = [
         id: "1",
         count: 18,
         label: "Conditional",
-        color: "bg-[#E8F0FE] text-[#226CF5]", // Light Blue
+        color: "bg-[#E8F0FE] text-[#226CF5]",
+        borderColor: "--color-info-light",
         buttonLabel: "Offer letter",
     },
     {
         id: "2",
         count: 22,
         label: "Un-Conditional",
-        color: "bg-[#F0FAEE] text-[#34A853]", // Light Green
+        color: "bg-[#F0FAEE] text-[#34A853]",
+        borderColor: "--color-success-bg",
         buttonLabel: "Offer letter",
     },
     {
         id: "3",
         count: 30,
         label: "Payment Received",
-        color: "bg-[#FEF7E6] text-[#FBBC05]", // Light Yellow
+        color: "bg-[#FEF7E6] text-[#FBBC05]",
+        borderColor: "--color-warning-bg",
         buttonLabel: "All Country",
     },
     {
         id: "4",
         count: 8,
         label: "Payment Received",
-        color: "bg-[#FEF2F2] text-[#EA4335]", // Light Red
+        color: "bg-[#FEF2F2] text-[#EA4335]",
+        borderColor: "--color-error-bg",
         buttonLabel: "Offer letter",
     },
     {
         id: "5",
         count: 8,
         label: "VISA Received",
-        color: "bg-[#F3F4F6] text-[#4B5563]", // Light Grey
+        color: "bg-[#F3F4F6] text-[#4B5563]",
+        borderColor: "--color-border-light",
         buttonLabel: "Offer letter",
     },
 ];

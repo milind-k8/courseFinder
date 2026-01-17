@@ -16,7 +16,15 @@ export default function StatsSection({ data }: StatsSectionProps) {
                         <span className="text-[30px] font-[500]">{stat.count}</span>
                         <span className="text-[var(--color-text-primary)] text-center mb-4">{stat.label}</span>
                     </div>
-                    <button className={`absolute bottom-[-12px] text-[13px] font-semibold px-3 h-[24px] bg-white border border-[var(${stat.color})] text-[var(${stat.color})] rounded-[3px] transition-colors mt-3`}>
+                    <button
+                        className="absolute bottom-[-12px] text-[13px] font-semibold px-3 h-[24px] bg-white rounded-[3px] transition-colors mt-3"
+                        style={{
+                            borderWidth: '1px',
+                            borderStyle: 'solid',
+                            borderColor: `var(${stat.borderColor})`,
+                            color: stat.color.match(/text-\[([^\]]+)\]/)?.[1] || 'inherit'
+                        }}
+                    >
                         {stat.buttonLabel}
                     </button>
                 </div>
