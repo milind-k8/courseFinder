@@ -13,15 +13,15 @@ interface AlliedServicesBannerProps {
 const AlliedServicesBanner = ({ data, autoRotateInterval = 5000 }: AlliedServicesBannerProps) => {
     const [currentIndex, setCurrentIndex] = useState(0);
 
-    useEffect(() => {
-        if (data.length <= 1) return;
+    // useEffect(() => {
+    //     if (data.length <= 1) return;
 
-        const interval = setInterval(() => {
-            setCurrentIndex((prev) => (prev + 1) % data.length);
-        }, autoRotateInterval);
+    //     const interval = setInterval(() => {
+    //         setCurrentIndex((prev) => (prev + 1) % data.length);
+    //     }, autoRotateInterval);
 
-        return () => clearInterval(interval);
-    }, [data.length, autoRotateInterval]);
+    //     return () => clearInterval(interval);
+    // }, [data.length, autoRotateInterval]);
 
     const currentBanner = data[currentIndex];
 
