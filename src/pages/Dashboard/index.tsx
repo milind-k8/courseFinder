@@ -1,6 +1,6 @@
-import { useState } from "react";
+import { useState, useMemo } from "react";
 import Button from "../../components/common/Button";
-import FilterBar from "./components/FilterBar";
+import FilterBar, { type FilterValues } from "./components/FilterBar";
 import StatsSection from "./components/StatsSection";
 import ApplicationsTable from "./components/ApplicationsTable";
 import NewsBulletin from "./components/NewsBulletin";
@@ -26,7 +26,6 @@ import {
 } from "../../data/dashboardData";
 
 export default function Dashboard() {
-    // Store all dashboard data in state
     const [statsData] = useState<StatCardData[]>(initialStatsData);
     const [applicationsData] = useState<ApplicationData[]>(initialApplicationsData);
     const [newsData] = useState<NewsData[]>(initialNewsData);
@@ -34,6 +33,37 @@ export default function Dashboard() {
     const [quickLinksData] = useState<LinkData[]>(initialQuickLinksData);
     const [managerData] = useState<ManagerData[]>(initialManagerData);
     const [bannerData] = useState<BannerData[]>(initialBannerData);
+
+    const [filters, setFilters] = useState<FilterValues>({
+        year: null,
+        dateCreated: null,
+        intake: null,
+        country: null,
+    });
+
+    const filteredApplicationsData = useMemo(() => {
+        let result = [...applicationsData];
+
+        if (filters.country) {
+            result = result.filter(app => app.country === filters.country);
+        }
+
+        if (filters.intake) {
+            result = result.filter(app => app.intake === filters.intake);
+        }
+
+        if (filters.dateCreated) {
+            result.sort((a, b) => {
+                const dateA = new Date(a.date);
+                const dateB = new Date(b.date);
+                return filters.dateCreated === 'newest'
+                    ? dateB.getTime() - dateA.getTime()
+                    : dateA.getTime() - dateB.getTime();
+            });
+        }
+
+        return result;
+    }, [applicationsData, filters]);
 
     const NameSection = () => {
         return <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between mb-6 lg:mb-10 gap-4">
@@ -52,9 +82,9 @@ export default function Dashboard() {
 
             <div className="flex flex-col lg:flex-row gap-6 lg:gap-8">
                 <div className="flex-1 min-w-0 order-2 lg:order-1">
-                    <FilterBar />
+                    <FilterBar filters={filters} onFilterChange={setFilters} />
                     <StatsSection data={statsData} />
-                    <ApplicationsTable data={applicationsData} />
+                    <ApplicationsTable data={filteredApplicationsData} />
                     <AlliedServicesBanner data={bannerData} />
                 </div>
 
@@ -81,4 +111,3 @@ export default function Dashboard() {
         </div>
     );
 };
-

@@ -15,6 +15,8 @@ export interface ApplicationData {
     program: string;
     pendingSince: string;
     date: string;
+    country: string;
+    intake: string;
 }
 
 export interface NewsData {
@@ -133,6 +135,8 @@ export const applicationsData: ApplicationData[] = [
         program: "Mwc Internation...",
         pendingSince: "1 Day",
         date: "12 Dec 2022",
+        country: "uk",
+        intake: "jan-2024",
     },
     {
         id: "2",
@@ -143,6 +147,8 @@ export const applicationsData: ApplicationData[] = [
         program: "Mwc Internation...",
         pendingSince: "1 Day",
         date: "12 Dec 2022",
+        country: "uk",
+        intake: "sep-2024",
     },
     {
         id: "3",
@@ -153,6 +159,8 @@ export const applicationsData: ApplicationData[] = [
         program: "Mwc Internation...",
         pendingSince: "1 Day",
         date: "12 Dec 2022",
+        country: "uk",
+        intake: "jan-2025",
     },
     {
         id: "4",
@@ -163,6 +171,8 @@ export const applicationsData: ApplicationData[] = [
         program: "Economics",
         pendingSince: "2 Days",
         date: "11 Dec 2022",
+        country: "uk",
+        intake: "jan-2024",
     },
     {
         id: "5",
@@ -173,6 +183,8 @@ export const applicationsData: ApplicationData[] = [
         program: "Mathematics",
         pendingSince: "3 Days",
         date: "10 Dec 2022",
+        country: "uk",
+        intake: "sep-2024",
     },
     {
         id: "6",
@@ -183,6 +195,8 @@ export const applicationsData: ApplicationData[] = [
         program: "Computer Science",
         pendingSince: "2 Days",
         date: "10 Dec 2022",
+        country: "uk",
+        intake: "jan-2024",
     },
     {
         id: "7",
@@ -193,6 +207,8 @@ export const applicationsData: ApplicationData[] = [
         program: "Business Mgmt",
         pendingSince: "3 Days",
         date: "09 Dec 2022",
+        country: "usa",
+        intake: "jan-2024",
     },
     {
         id: "8",
@@ -203,6 +219,8 @@ export const applicationsData: ApplicationData[] = [
         program: "Law",
         pendingSince: "1 Day",
         date: "12 Dec 2022",
+        country: "usa",
+        intake: "sep-2024",
     },
     {
         id: "9",
@@ -213,6 +231,8 @@ export const applicationsData: ApplicationData[] = [
         program: "Medicine",
         pendingSince: "5 Days",
         date: "07 Dec 2022",
+        country: "canada",
+        intake: "jan-2025",
     },
     {
         id: "10",
@@ -223,6 +243,8 @@ export const applicationsData: ApplicationData[] = [
         program: "Engineering",
         pendingSince: "2 Days",
         date: "10 Dec 2022",
+        country: "canada",
+        intake: "jan-2024",
     },
     {
         id: "11",
@@ -233,6 +255,8 @@ export const applicationsData: ApplicationData[] = [
         program: "Arts",
         pendingSince: "4 Days",
         date: "08 Dec 2022",
+        country: "australia",
+        intake: "sep-2024",
     },
     {
         id: "12",
@@ -243,6 +267,8 @@ export const applicationsData: ApplicationData[] = [
         program: "Physics",
         pendingSince: "1 Day",
         date: "12 Dec 2022",
+        country: "australia",
+        intake: "jan-2024",
     },
     {
         id: "13",
@@ -253,6 +279,8 @@ export const applicationsData: ApplicationData[] = [
         program: "Chemistry",
         pendingSince: "6 Days",
         date: "06 Dec 2022",
+        country: "usa",
+        intake: "jan-2025",
     },
     {
         id: "14",
@@ -263,6 +291,8 @@ export const applicationsData: ApplicationData[] = [
         program: "Biology",
         pendingSince: "2 Days",
         date: "10 Dec 2022",
+        country: "canada",
+        intake: "sep-2024",
     },
     {
         id: "15",
@@ -273,6 +303,8 @@ export const applicationsData: ApplicationData[] = [
         program: "Design",
         pendingSince: "3 Days",
         date: "09 Dec 2022",
+        country: "australia",
+        intake: "jan-2024",
     },
 ];
 
