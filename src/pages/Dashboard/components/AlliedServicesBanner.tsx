@@ -1,27 +1,15 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import Button from "../../../components/common/Button";
-// @ts-ignore
 import studentImage from "../../../assets/images/student_portrait.png";
 import LazyImage from '../../../components/common/LazyImage';
 import type { BannerData } from "../../../data/dashboardData";
 
 interface AlliedServicesBannerProps {
     data: BannerData[];
-    autoRotateInterval?: number;
 }
 
-const AlliedServicesBanner = ({ data, autoRotateInterval = 5000 }: AlliedServicesBannerProps) => {
+const AlliedServicesBanner = ({ data }: AlliedServicesBannerProps) => {
     const [currentIndex, setCurrentIndex] = useState(0);
-
-    // useEffect(() => {
-    //     if (data.length <= 1) return;
-
-    //     const interval = setInterval(() => {
-    //         setCurrentIndex((prev) => (prev + 1) % data.length);
-    //     }, autoRotateInterval);
-
-    //     return () => clearInterval(interval);
-    // }, [data.length, autoRotateInterval]);
 
     const currentBanner = data[currentIndex];
 
