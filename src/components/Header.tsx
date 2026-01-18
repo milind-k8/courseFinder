@@ -50,6 +50,7 @@ const UserProfile = () => (
                 size="200x200"
                 alt="User avatar"
                 className="w-full h-full object-cover"
+                id={Math.random().toString()}
             />
         </div>
         <div className="hidden lg:flex items-center gap-2">
