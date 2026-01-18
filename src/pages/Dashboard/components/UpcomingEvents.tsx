@@ -3,10 +3,9 @@ import type { EventData } from "../../../data/dashboardData";
 import Card from "../../../components/common/Card";
 import Button from "../../../components/common/Button";
 import ChevronIcon from '../../../assets/chevron-left.svg?react';
-import GroupImage from '../../../assets/groupImage.jpg';
 import BuidingIcon from '../../../assets/buiding.svg?react';
 import UserIcon from '../../../assets/user.svg?react';
-import LazyImage from '../../../components/common/LazyImage';
+import RandomImage from '../../../components/common/RandomImage';
 
 interface UpcomingEventsProps {
     data: EventData[];
@@ -48,9 +47,11 @@ export default function UpcomingEvents({ data }: UpcomingEventsProps) {
 
             <div>
                 <div className="overflow-hidden mb-3 h-[140px]">
-                    <LazyImage
-                        src={eventData.imageUrl || GroupImage}
+                    <RandomImage
+                        category="education"
+                        size="320x240"
                         alt={eventData.title}
+                        id={eventData.id}
                         className="w-full h-full object-cover"
                     />
                 </div>

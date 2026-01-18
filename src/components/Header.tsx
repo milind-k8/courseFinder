@@ -1,11 +1,11 @@
 import { useAtom } from 'jotai';
 import CourseIcon from '../assets/coursefinder.svg?react'
 import Input from './common/Input';
+import RandomImage from './common/RandomImage';
 import SearchIcon from '../assets/searchIcon.svg?react'
 import SpeakerIcon from '../assets/speaker.svg?react'
 import BellIcon from '../assets/bell.svg?react'
 import ProfileIcon from '../assets/chevron-down.svg?react'
-import headerUser from '../assets/header-user.png'
 import { searchQueryAtom } from '../store/searchAtoms';
 
 interface HeaderProps {
@@ -44,7 +44,14 @@ const NotificationBell = () => (
 
 const UserProfile = () => (
     <button className="flex items-center gap-2 lg:gap-4 bg-transparent border-none cursor-pointer p-0 text-white" aria-label="User profile">
-        <img src={headerUser} alt="" className="rounded-full w-8 h-8 lg:w-auto lg:h-auto" />
+        <div className="rounded-full w-8 h-8 lg:w-10 lg:h-10 overflow-hidden">
+            <RandomImage
+                category="people"
+                size="200x200"
+                alt="User avatar"
+                className="w-full h-full object-cover"
+            />
+        </div>
         <div className="hidden lg:flex items-center gap-2">
             <span>John Doe</span>
             <ProfileIcon aria-hidden="true" />
