@@ -15,7 +15,7 @@ import QuickIcon from '../assets/quick.svg?react';
 interface SidebarItem {
     label: string;
     icon: React.FC<React.SVGProps<SVGSVGElement>>;
-    route?: string;
+    route: string;
     hasDropdown?: boolean;
 }
 
@@ -34,7 +34,7 @@ const SIDEBAR_ITEMS: SidebarItem[] = [
     { label: 'Commission Payments', icon: CommissionIcon, route: ROUTES.COMMISSION },
     { label: 'Allied Services', icon: AlliedIcon, route: ROUTES.SERVICES, hasDropdown: true },
     { label: 'Learning Resources', icon: InfoIcon, route: ROUTES.RESOURCES },
-    { label: 'Quick Links', icon: QuickIcon, hasDropdown: true },
+    { label: 'Quick Links', icon: QuickIcon, hasDropdown: true, route: ROUTES.QUICK_LINKS },
 ];
 
 const ChevronIcon = () => (
@@ -85,27 +85,17 @@ export function Sidebar({ isOpen, onClose, isMobile = false }: SidebarProps) {
                         <ul className="list-none p-4 m-0 flex flex-col gap-2">
                             {SIDEBAR_ITEMS.map((item, index) => (
                                 <li key={index}>
-                                    {item.route ? (
-                                        <NavLink
-                                            to={item.route}
-                                            className={({ isActive }) => `${navLinkClasses} ${isActive ? activeClasses : inactiveClasses}`}
-                                            end={item.route === ROUTES.DASHBOARD}
-                                        >
-                                            <div className={`w-6 h-6 flex items-center justify-center ${!isCollapsed ? 'mr-3' : 'mx-auto'}`}>
-                                                <span className="block w-[24px] h-[24px]"><item.icon className="max-w-full max-h-full" aria-label={item.label} /></span>
-                                            </div>
-                                            {!isCollapsed && <span className="whitespace-nowrap">{item.label}</span>}
-                                            {!isCollapsed && item.hasDropdown && <ChevronIcon />}
-                                        </NavLink>
-                                    ) : (
-                                        <div className={`${navLinkClasses} ${inactiveClasses}`}>
-                                            <div className={`w-6 h-6 flex items-center justify-center ${!isCollapsed ? 'mr-3' : 'mx-auto'}`}>
-                                                <item.icon className="max-w-full max-h-full" aria-label={item.label} />
-                                            </div>
-                                            {!isCollapsed && <span className="whitespace-nowrap">{item.label}</span>}
-                                            {!isCollapsed && item.hasDropdown && <ChevronIcon />}
+                                    <NavLink
+                                        to={item.route}
+                                        className={({ isActive }) => `${navLinkClasses} ${isActive ? activeClasses : inactiveClasses}`}
+                                        end={item.route === ROUTES.DASHBOARD}
+                                    >
+                                        <div className={`w-6 h-6 flex items-center justify-center ${!isCollapsed ? 'mr-3' : 'mx-auto'}`}>
+                                            <span className="block w-[24px] h-[24px]"><item.icon className="max-w-full max-h-full" aria-label={item.label} /></span>
                                         </div>
-                                    )}
+                                        {!isCollapsed && <span className="whitespace-nowrap">{item.label}</span>}
+                                        {!isCollapsed && item.hasDropdown && <ChevronIcon />}
+                                    </NavLink>
                                 </li>
                             ))}
                         </ul>
@@ -150,28 +140,18 @@ export function Sidebar({ isOpen, onClose, isMobile = false }: SidebarProps) {
                         <ul className="list-none p-4 m-0 flex flex-col gap-2">
                             {SIDEBAR_ITEMS.map((item, index) => (
                                 <li key={index}>
-                                    {item.route ? (
-                                        <NavLink
-                                            to={item.route}
-                                            className={({ isActive }) => `${navLinkClasses} ${isActive ? activeClasses : inactiveClasses}`}
-                                            end={item.route === ROUTES.DASHBOARD}
-                                            onClick={handleNavClick}
-                                        >
-                                            <div className="w-6 h-6 flex items-center justify-center mr-3">
-                                                <span className="block w-[24px] h-[24px]"><item.icon className="max-w-full max-h-full" aria-label={item.label} /></span>
-                                            </div>
-                                            <span className="whitespace-nowrap">{item.label}</span>
-                                            {item.hasDropdown && <ChevronIcon />}
-                                        </NavLink>
-                                    ) : (
-                                        <div className={`${navLinkClasses} ${inactiveClasses}`}>
-                                            <div className="w-6 h-6 flex items-center justify-center mr-3">
-                                                <item.icon className="max-w-full max-h-full" aria-label={item.label} />
-                                            </div>
-                                            <span className="whitespace-nowrap">{item.label}</span>
-                                            {item.hasDropdown && <ChevronIcon />}
+                                    <NavLink
+                                        to={item.route}
+                                        className={({ isActive }) => `${navLinkClasses} ${isActive ? activeClasses : inactiveClasses}`}
+                                        end={item.route === ROUTES.DASHBOARD}
+                                        onClick={handleNavClick}
+                                    >
+                                        <div className="w-6 h-6 flex items-center justify-center mr-3">
+                                            <span className="block w-[24px] h-[24px]"><item.icon className="max-w-full max-h-full" aria-label={item.label} /></span>
                                         </div>
-                                    )}
+                                        <span className="whitespace-nowrap">{item.label}</span>
+                                        {item.hasDropdown && <ChevronIcon />}
+                                    </NavLink>
                                 </li>
                             ))}
                         </ul>

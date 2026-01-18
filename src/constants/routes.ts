@@ -7,4 +7,5 @@ export const ROUTES = {
     COMMISSION: '/commission',
     SERVICES: '/services',
     RESOURCES: '/resources',
+    QUICK_LINKS: '/quick-links',
 } as const;
